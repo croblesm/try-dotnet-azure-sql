@@ -16,7 +16,7 @@
 						"database": "master",
 						"authenticationType": "SqlLogin",
 						"user": "sa",
-						"password": "P@ssw0rd!",
+						"password": "${env:SA_PASSWORD}",
 						"savePassword": true,
 						"profileName": "LocalDev",
 						"trustServerCertificate": true
@@ -41,7 +41,7 @@
 	"forwardPorts": [5000, 5001, 8000, 1433],
 
     // Post create commands to run after the container is created.
-	"postCreateCommand": "bash .devcontainer/sql/postCreateCommand.sh P@ssw0rd! './bin/Debug/' './.devcontainer/sql/'",
+	"postCreateCommand": "bash .devcontainer/sql/postCreateCommand.sh 'database/Library/bin/Debug'",
 
 	// Post start commands to run after the container is started.
 

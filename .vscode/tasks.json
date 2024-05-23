@@ -23,6 +23,23 @@
             }
         },
         {
+            "label": "Build SQL Database project",
+            "type": "shell",
+            "command": "dotnet build",
+            "options": {
+                "cwd": "${workspaceFolder}/database/Library"
+            }
+        },
+        {
+            "label": "Deploy SQL Database project",
+            "type": "shell",
+            "command": "bash",
+            "args": [
+                ".devcontainer/sql/postCreateCommand.sh",
+                "database/Library/bin/Debug"
+            ]
+        },
+        {
             "label": "Trust .NET HTTPS certificate",
             "type": "shell",
             "command": "dotnet dev-certs https --trust"
